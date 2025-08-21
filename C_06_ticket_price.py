@@ -2,7 +2,7 @@
 def int_check(question):
     """Checks users enter an integer"""
 
-    error = "Oops - please enter an integer."
+    error = "Oops - please enter an intger."
 
     while True:
 
@@ -56,10 +56,12 @@ def string_check(question, valid_answers=('yes', 'no'),
 payment_ans = ('cash', 'credit')
 
 # Pizza Price List
-CHEESE_PRICE = 7.50
-PEPPERONI_PRICE = 10.50
-HAWAIIAN_PRICE = 6.50
-MEATLOVERS_PRICE = 7.50
+PEPPERONI_PRICE = 7.00
+CHEESE_PRICE = 7.00
+MEAT_PRICE = 9.00
+HAWAII_PRICE = 7.00
+VEG_PRICE = 8.00
+EVIL_PRICE = 4000
 
 # Credit card surcharge (currently 5%)
 CREDIT_SURCHARGE = 0.05
@@ -75,25 +77,6 @@ while True:
     age = int_check("Age: ")
 
     # Output error message / success message
-    if age < 12:
-        print(f"{name} is too young")
-        continue
-
-    # Child ticket price is $7.50
-    elif 12 <= age < 16:
-        ticket_price = CHEESE_PRICE
-
-    # Adult ticket ($10.50)
-    elif 16 <= age < 65:
-        ticket_price = PEPPERONI_PRICE
-
-    # Senior Citizen ticket ($6.50)
-    elif 65 <= age < 121:
-        ticket_price = HAWAIIAN_PRICE
-
-    else:
-        print(f"{name} is too old")
-        continue
 
     # ask user for payment method (cash / credit / ca / cr)
     pay_method = string_check("Payment method: ", payment_ans, 2)
